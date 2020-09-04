@@ -1,0 +1,315 @@
+body {
+  direction: rtl;
+  width: 100vw;
+  height: 100vh;
+  background: #333333;
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-family: 'Vazir';
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  position: relative;
+}
+
+canvas {
+  border: none;
+  display: block;
+  -ms-touch-action: none;
+      touch-action: none;
+  margin-bottom: 0.5rem;
+}
+
+.main {
+  top: -2rem;
+}
+
+.nav,
+.bottom-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 1px;
+  margin-bottom: 0.3rem;
+}
+
+.bottom-menu {
+  color: #ffffff;
+  font-size: 0.6rem;
+}
+
+.bottom-menu span {
+  font-size: 1.4rem;
+  color: deeppink;
+}
+
+button,
+a {
+  border-radius: 3px;
+  padding: 0.3rem 1rem;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.pen {
+  background-color: #1a1a1a;
+  color: whitesmoke;
+}
+
+.eraser {
+  color: #1a1a1a;
+  background-color: whitesmoke;
+}
+
+.clear {
+  display: inline-block;
+  color: #171717;
+  background-color: #ffce00;
+  cursor: pointer;
+}
+
+.next-item-btn {
+  background-color: #277b4c;
+  color: whitesmoke;
+}
+
+.start-game-btn,
+.join-game-btn {
+  border: 1px solid #878787;
+}
+
+.start-game-btn {
+  background-color: rgba(188, 139, 74, 0.8);
+}
+
+.start-game-btn:hover {
+  background-color: rgba(117, 85, 43, 0.8);
+  color: #ffffff;
+}
+
+.join-game-btn {
+  background-color: #7ad1ae;
+}
+
+.join-game-btn:hover {
+  background-color: #215e46;
+  color: #ffffff;
+}
+
+.success-msg {
+  position: absolute;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #4eab5c;
+  width: 100vw;
+  height: 100vh;
+}
+
+.canvas-msg {
+  position: absolute;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(0, 0, 0, 0.917);
+  color: white;
+  width: 100%;
+  height: 100%;
+  z-index: 500;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.form-msg {
+  position: absolute;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(0, 0, 0, 0.917);
+  color: white;
+  width: 100%;
+  height: 100%;
+  z-index: 500;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.err-msg {
+  position: absolute;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #a63d3d;
+  width: 100vw;
+  height: 100vh;
+}
+
+.d-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.d-none {
+  display: none;
+}
+
+select {
+  border: none;
+  height: 2rem;
+  text-align-last: center;
+}
+
+select option {
+  direction: rtl;
+}
+
+.register,
+.scores {
+  text-align: center;
+  width: 30%;
+  background-color: rgba(255, 255, 255, 0.572);
+  padding: 2rem;
+  padding-bottom: 2.8rem;
+}
+
+.register button,
+.scores button {
+  margin-bottom: 0.5rem;
+}
+
+.register input,
+.scores input {
+  border: none;
+  background-color: #e7e7e7;
+  height: 2rem;
+  padding: 0 1.3rem;
+  margin-bottom: 0.5rem;
+  border-radius: 3px;
+}
+
+.form-notice {
+  font-size: 0.6rem;
+  padding: 0;
+  margin-bottom: 0.9rem;
+}
+
+.register {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.scores {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.timer {
+  margin-bottom: 1rem;
+}
+
+table {
+  direction: rtl;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #000000;
+  text-align: right;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #434343;
+  color: #ffffff;
+}
+
+tr:nth-child(odd) {
+  background-color: #ffffff;
+  color: #434343;
+}
+
+.bg-div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.bg-div > * {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.bg-div > .bg-img {
+  background-image: url("./assets/annie-spratt-bg.jpg");
+  background-size: cover;
+  -webkit-filter: blur(2px);
+          filter: blur(2px);
+  z-index: -2;
+}
+
+.bg-div > .img-filter {
+  background-color: rgba(0, 0, 0, 0.207);
+  z-index: -1;
+}
+
+@media (max-width: 600px) {
+  body {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: unset;
+  }
+  .register,
+  .scores {
+    margin: unset;
+    margin-bottom: 3rem;
+    width: 75%;
+    border-radius: 5px;
+  }
+  .register {
+    margin-top: 1rem;
+  }
+}
+/*# sourceMappingURL=main.css.map */

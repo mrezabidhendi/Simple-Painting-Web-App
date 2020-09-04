@@ -1,0 +1,275 @@
+body {
+	direction: rtl;
+	width: 100vw;
+	height: 100vh;
+	background: rgb(51, 51, 51);
+	font-family: 'Roboto', 'Helvetica', sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-family: 'Vazir';
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: inherit;
+	position: relative;
+}
+
+canvas {
+	border: none;
+	display: block;
+	touch-action: none;
+	margin-bottom: 0.5rem;
+}
+.main {
+	top: -2rem;
+}
+
+.nav,
+.bottom-menu {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 1px;
+	margin-bottom: 0.3rem;
+}
+
+.bottom-menu {
+	color: #ffffff;
+	font-size: 0.6rem;
+
+	& span {
+		font-size: 1.4rem;
+		color: deeppink;
+	}
+}
+
+button,
+a {
+	border-radius: 3px;
+	padding: 0.3rem 1rem;
+	cursor: pointer;
+	border: none;
+	outline: none;
+}
+.pen {
+	background-color: #1a1a1a;
+	color: rgb(245, 245, 245);
+}
+.eraser {
+	color: #1a1a1a;
+	background-color: rgb(245, 245, 245);
+}
+.clear {
+	display: inline-block;
+	color: #171717;
+	background-color: #ffce00;
+	cursor: pointer;
+}
+.next-item-btn {
+	background-color: rgb(39, 123, 76);
+	color: rgb(245, 245, 245);
+}
+
+.start-game-btn,
+.join-game-btn {
+	border: 1px solid rgb(135, 135, 135);
+}
+
+.start-game-btn {
+	background-color: rgba(188, 139, 74, 0.8);
+
+	&:hover {
+		background-color: darken(rgba(188, 139, 74, 0.8), 20%);
+		color: #ffffff;
+	}
+}
+.join-game-btn {
+	background-color: rgb(122, 209, 174);
+
+	&:hover {
+		background-color: darken(rgb(122, 209, 174), 40%);
+		color: #ffffff;
+	}
+}
+
+.success-msg {
+	position: absolute;
+	justify-content: center;
+	align-items: center;
+	background-color: rgb(78, 171, 92);
+	width: 100vw;
+	height: 100vh;
+}
+
+.canvas-msg {
+	position: absolute;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.917);
+	color: white;
+	width: 100%;
+	height: 100%;
+	z-index: 500;
+	display: flex;
+}
+
+.form-msg {
+	position: absolute;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.917);
+	color: white;
+	width: 100%;
+	height: 100%;
+	z-index: 500;
+	display: flex;
+}
+
+.err-msg {
+	position: absolute;
+	justify-content: center;
+	align-items: center;
+	background-color: rgb(166, 61, 61);
+	width: 100vw;
+	height: 100vh;
+}
+
+.d-flex {
+	display: flex;
+}
+
+.d-none {
+	display: none;
+}
+
+select {
+	border: none;
+	height: 2rem;
+	// width: 8rem;
+	text-align-last: center;
+
+	option {
+		direction: rtl;
+	}
+}
+
+.register,
+.scores {
+	text-align: center;
+	width: 30%;
+	background-color: rgba(255, 255, 255, 0.572);
+	padding: 2rem;
+	padding-bottom: 2.8rem;
+
+	button {
+		margin-bottom: 0.5rem;
+	}
+
+	input {
+		border: none;
+		background-color: rgb(231, 231, 231);
+		height: 2rem;
+		padding: 0 1.3rem;
+		margin-bottom: 0.5rem;
+		border-radius: 3px;
+	}
+}
+
+.form-notice {
+	font-size: 0.6rem;
+	padding: 0;
+	margin-bottom: 0.9rem;
+}
+
+.register {
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+.scores {
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+.timer {
+	margin-bottom: 1rem;
+}
+
+table {
+	direction: rtl;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+td,
+th {
+	border: 1px solid #000000;
+	text-align: right;
+	padding: 8px;
+}
+
+tr:nth-child(even) {
+	background-color: #434343;
+	color: #ffffff;
+}
+
+tr:nth-child(odd) {
+	background-color: #ffffff;
+	color: #434343;
+}
+
+.bg-div {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+
+	& > * {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		user-drag: none;
+		user-select: none;
+		-moz-user-select: none;
+		-webkit-user-drag: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+	}
+
+	& > .bg-img {
+		background-image: url('./assets/annie-spratt-bg.jpg');
+		// background-attachment: fixed;
+		background-size: cover;
+		filter: blur(2px);
+		z-index: -2;
+	}
+
+	& > .img-filter {
+		background-color: rgba(0, 0, 0, 0.207);
+		z-index: -1;
+	}
+}
+
+@media (max-width:600px){
+	body{
+		flex-direction: column;
+		height: unset;
+	}
+
+
+	.register,
+	.scores{
+		margin: unset;
+		margin-bottom: 3rem;
+		width: 75%;
+		border-radius: 5px;
+	}
+	
+	.register{
+		margin-top: 1rem;
+	}
+
+}

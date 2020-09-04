@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Canvas Drawing App</title>
+		<link href='https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="./main.css" /></head>
+	<body>
+		<div class="bg-div">
+			<div class="bg-img"></div>
+			<div class="img-filter"></div>
+		</div>
+		<aside class="register">
+			<div class="timer">
+				⬇ شروع بازی ⬇
+			</div>
+			<div>
+				<div class="form-msg d-none">اشکال خواسته شده را با موس رسم کنید</div>
+				<input class="nick-name" type="text" placeholder="اسمتونو وارد کنید">
+				<br>
+				<input class="game-id" type="text" placeholder="کد بازی رو وارد کنید">
+				<p class="form-notice">اگه میخوای بازی جدیدی شروع کنی یه کد دلخواه بزن بعد کد رو به دوستات بده تا بیان تو بازی</p>
+				<button class="start-game-btn" type="button">ساختن بازی</button>
+				<button class="join-game-btn" type="button">پیوستن به بازی</button>
+			</div>
+		</aside>
+		<main class="main">
+			<div class="canvas-msg">بازی بزودی شروع خواهد شد</div>
+			<nav class="nav">
+				<button class="clear">Clear</button>
+				<button class="eraser">Eraser</button>
+				<button class="pen">Pen</button>
+				<!-- <span class="test-bitches"></span> -->
+			</nav>
+			<canvas></canvas>
+			<nav class="bottom-menu">
+				<button class="next-item-btn">بعدی</button>
+				<p class="current-item-to-draw">
+					شکلی که باید بکشی:
+					<span></span>
+				</p>
+			</nav>
+			</main>
+		<aside class="scores">
+			<div>رتبه ها</div>
+			<table style="width:100%">
+				<tbody>
+					<tr>
+						<th>رتبه</th>
+						<th>نام کاربر</th>
+						<th>شناسه کاربر</th>
+						<th>زمان کاربر</th>
+					</tr>
+				</tbody>
+			</table>
+		</aside>
+		<script src="./assets/tf-libs/tf.min.js"></script>
+		<script src="./assets/tf-libs/teachablemachine-image.min.js"></script>
+		<script type="text/javascript">
+			// More API functions here:
+			// https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
+
+			// the link to your model provided by Teachable Machine export panel
+			const URL = './tf-model/';
+
+			let model, maxPredictions, prediction;
+
+			// Load the image model and setup the webcam
+			async function init() {
+				const modelURL = URL + 'model.json';
+				const metadataURL = URL + 'metadata.json';
+
+				// load the model and metadata
+				// Refer to tmImage.loadFromFiles() in the API to support files from a file picker
+				// or files from your local hard drive
+				// Note: the pose library adds "tmImage" object to your window (window.tmImage)
+				model = await tmImage.load(modelURL, metadataURL);
+				maxPredictions = model.getTotalClasses();
+				predict();
+				// maxPredictions = 1;
+			}
+
+			init();
+
+			async function predict(){
+				prediction = await model.predictTopK(
+					document.querySelector('canvas'),
+					maxPredictions,
+					false
+				);
+				return {item: prediction[0].className, probability: prediction[0].probability};
+			}
+
+			// run the webcam image through the image model
+		</script>
+		<script src="./main.9.js"></script>
+	</body>
+</html>
