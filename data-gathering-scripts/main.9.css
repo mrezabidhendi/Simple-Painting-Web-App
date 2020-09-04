@@ -1,0 +1,93 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  background: #333333;
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: 'Vazir';
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+}
+
+canvas {
+  border: none;
+  display: block;
+  -ms-touch-action: none;
+      touch-action: none;
+}
+
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 1px;
+  margin-bottom: .3rem;
+}
+
+button, a {
+  padding: .3rem 1rem;
+}
+
+.save {
+  border: none;
+  outline: none;
+  background-color: #5fc398;
+}
+
+.clear {
+  display: inline-block;
+  color: #171717;
+  background-color: #FFCE00;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.success-msg {
+  position: absolute;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #4eab5c;
+  width: 100vw;
+  height: 100vh;
+}
+
+.d-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.d-none {
+  display: none;
+}
+
+select {
+  border: none;
+  height: 2rem;
+  text-align-last: center;
+}
+
+select option {
+  direction: rtl;
+}
+/*# sourceMappingURL=main.css.map */
